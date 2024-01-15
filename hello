@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontale Scroll Pagina</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+
+    section {
+      display: inline-block;
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      box-sizing: border-box;
+      text-align: center;
+      padding-top: 20vh;
+      position: relative;
+      transition: transform 1.5s ease-in-out;
+      margin: 0;
+      position: relative;
+    }
+
+    img {
+      margin-top: -17%;
+      position: absolute;
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      z-index: 1;
+    }
+
+    section:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    section:nth-child(even) {
+      background-color: #e0e0e0;
+    }
+
+    button.start_btn {
+      width: 500%;
+      height: 50px;
+      background-color: darkgreen;
+      border-radius: 25px;
+      color: #e0e0e0;
+    }
+
+    .centered-buttons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .corner-buttons {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .corner-buttons.right {
+      right: 10px;
+      left: auto;
+      cursor: pointer;
+      background-color: darkgreen;
+      z-index: 2;
+    }
+
+    #cogwheel {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 2;
+    }
+
+    /* Side Navbar Styles */
+    #sideNavbar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      text-align: center;
+    }
+
+    #sideNavbar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    #sideNavbar a:hover {
+      color: #f1f1f1;
+    }
+
+    #sideNavbar .closebtn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 36px;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="centered-buttons">
+      <button class="start_btn" onclick="goToNextPage()">Start</button>
+      <!-- <button onclick="openSideNavbar()()">Settings</button> -->
+      <!-- <button onclick="openCredits()">Credits</button> -->
+    </div>
+    <h1>Pagina 1</h1>
+    <p>Inhoud van pagina 1</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 1</h1>
+    <p>Inhoud van pagina 1</p>
+    <img src="images/pixlr-image-generator-1667b64d-9512-462d-9644-51809ae59ac0.png">
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 3</h1>
+    <p>Inhoud van pagina 3</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 4</h1>
+    <p>Inhoud van pagina 4</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 5</h1>
+    <p>Inhoud van pagina 5</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 6</h1>
+    <p>Inhoud van pagina 6</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 7</h1>
+    <p>Inhoud van pagina 7</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 8</h1>
+    <p>Inhoud van pagina 8</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 9</h1>
+    <p>Inhoud van pagina 9</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+  <section>
+    <div class="corner-buttons">
+      <button onclick="goToPreviousPage()">Previous</button>
+    </div>
+    <div class="corner-buttons right">
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+    <h1>Pagina 10</h1>
+    <p>Inhoud van pagina 10</p>
+    <i id="cogwheel" class="fas fa-cog" onclick="openSideNavbar()"></i>
+  </section>
+
+  <!-- Credits Page -->
+  <section id="creditsPage">
+    <div class="centered-buttons">
+      <button onclick="goToHome()">Home</button>
+    </div>
+    <div>
+      <h1>Credits</h1>
+      <p>This is the Credits Page. You can adjust this text later.</p>
+    </div>
+  </section>
+
+  <!-- Side Navbar -->
+  <div id="sideNavbar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSideNavbar()">&times;</a>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+    <button onclick="adjustVolume()">Volume</button>
+    <button onclick="changeLanguage()">English</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+  <script>
+    let currentScrollPosition = 0;
+
+    function goToNextPage() {
+      const newScrollPosition = currentScrollPosition + window.innerWidth;
+      smoothScroll(newScrollPosition);
+    }
+
+    function goToPreviousPage() {
+      const newScrollPosition = currentScrollPosition - window.innerWidth;
+      smoothScroll(newScrollPosition);
+    }
+
+    function openCredits() {
+      const creditsPage = document.getElementById('creditsPage');
+      const newScrollPosition = creditsPage.offsetLeft;
+      smoothScroll(newScrollPosition);
+    }
+
+    function goToHome() {
+      const homePage = document.querySelector('section');
+      const newScrollPosition = homePage.offsetLeft;
+      smoothScroll(newScrollPosition);
+    }
+
+    function openSideNavbar() {
+      document.getElementById("sideNavbar").style.width = "250px";
+    }
+
+    function closeSideNavbar() {
+      document.getElementById("sideNavbar").style.width = "0";
+    }
+
+    function smoothScroll(target) {
+      const start = currentScrollPosition;
+      const startTime = performance.now();
+      const duration = 1000;
+
+      function animateScroll(time) {
+        const timeFraction = (time - startTime) / duration;
+        document.documentElement.scrollLeft = start + (target - start) * timeFraction;
+
+        if (timeFraction < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          currentScrollPosition = target;
+        }
+      }
+
+      requestAnimationFrame(animateScroll);
+    }
+
+    function toggleDarkMode() {
+      // Implement your dark mode logic here
+    }
+
+    function adjustVolume() {
+      // Implement your volume adjustment logic here
+    }
+
+    function changeLanguage() {
+      // Implement your language change logic here
+    }
+
+    // document.addEventListener('wheel', function (event) {
+    //   if (event.deltaY > 0) {
+    //     event.preventDefault();
+    //     goToNextPage();
+    //   } else if (event.deltaY < 0) {
+    //     event.preventDefault();
+    //     goToPreviousPage();
+    //   }
+    // });
+  </script>
+
+</body>
+
+</html>
